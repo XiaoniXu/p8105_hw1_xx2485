@@ -1,0 +1,59 @@
+---
+title: "p8105_hw1_xx2485.Rmd"
+author: "Xiaoni Xu"
+date: "2024-09-12"
+output: html_document
+---
+
+
+
+## Problem 1
+download the a package containing the penguins dataset:
+```{r}
+# install.packages("palmerpenguins")
+data("penguins", package = "palmerpenguins")
+library(tidyverse)
+library(ggplot2)
+```
+
+Write a short description of the penguins dataset , please include:
+
+the data in this dataset, including names / values of important variables
+the size of the dataset (using nrow and ncol)
+the mean flipper length
+
+In 'penguins' dataset, there are both qualitative and quantitative data about each individual penguin. The qualitative data includes species, location, sex, and year, while the quantitative data includes bill length, bill depth, flipper length, and body mass.
+
+The size of the dataset can be found using the code below, which shows that there are 344 individuals with 8 categories of data.
+```{r}
+nrow(penguins)
+ncol(penguins)
+```
+
+The mean flipper length can be found using the code, which is 200.9152 after removing NA values.
+```{r}
+# clean the data first for the flipper length
+penguins_filtered <- penguins %>%
+  filter(!is.na(flipper_length_mm))
+
+mean(penguins_filtered$flipper_length_mm)
+```
+
+A scatterplot of flipper_length_mm (y) vs bill_length_mm (x); color points using the species variable (adding color = ... inside of aes in your ggplot code should help).
+```{r}
+penguins_filtered <- penguins %>%
+  filter(!is.na(flipper_length_mm) & !is.na(bill_length_mm))
+
+# Create the scatterplot
+scatterplot <- ggplot(data = penguins_filtered, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  labs(title = "Flipper Length vs Bill Length by Species", 
+       x = "Bill Length (mm)", 
+       y = "Flipper Length (mm)")
+
+# Display the plot
+print(scatterplot)
+
+# Export the plot to the project directory
+ggsave("scatterplot_flipper_vs_bill.png", plot = scatterplot, width = 7, height = 5)
+```
