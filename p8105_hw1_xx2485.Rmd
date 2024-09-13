@@ -2,7 +2,7 @@
 title: "p8105_hw1_xx2485.Rmd"
 author: "Xiaoni Xu"
 date: "2024-09-12"
-output: html_document
+output: github_document
 ---
 
 
