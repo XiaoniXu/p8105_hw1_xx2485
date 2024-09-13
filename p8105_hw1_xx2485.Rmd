@@ -57,3 +57,37 @@ print(scatterplot)
 # Export the plot to the project directory
 ggsave("scatterplot_flipper_vs_bill.png", plot = scatterplot, width = 7, height = 5)
 ```
+
+## Problem 2
+Creating a data frame comprised of:
+a random sample of size 10 from a standard Normal distribution
+a logical vector indicating whether elements of the sample are greater than 0
+a character vector of length 10
+a factor vector of length 10, with 3 different factor “levels”
+
+```{r}
+df = 
+  tibble(
+    ran_samp = rnorm(n = 10),
+    log_vec = ran_samp > 0,
+    cha_vec = c("Calidris_canutus", "Calidris_pusilla", "Calidris_himantopus", "Calidris_subruficollis", "Calidris_alba", "Calidris alpina", "Calidris_maritima", "Calidris_bairdii", "Calidris_fuscicollis", "Calidris minutilla"),
+    fac_vec = factor(c("rare", "common", "uncommon", "rare", "common", "uncommon", "rare", "rare", "rare", "common"), levels = c("common", "uncommon", "rare"))
+  )
+# the factor vector shows how common each Calidris species (sandpipers) is in Cook County, Illinois. Data source: my personal birding experience from 2019 to 2024 in Chicago
+# the numeric values don't really have real meanings
+
+print(df)
+```
+
+
+Taking the mean of each variable in your dataframe. 
+```{r}
+mean(df$ran_samp)
+mean(df$log_vec)
+mean(df$cha_vec)
+mean(df$fac_vec)
+```
+We can take the mean for the random sample of size 10 from a standard Normal distribution and the logical vector indicating whether elements of the sample are greater than 0, but we can't take the mean for the character vector of length 10 or the factor vector of length 10.
+
+
+In some cases, you can explicitly convert variables from one type to another. Write a code chunk that applies the as.numeric function to the logical, character, and factor variables (please show this chunk but not the output). What happens, and why? Does this help explain what happens when you try to take the mean?
