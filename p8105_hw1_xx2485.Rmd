@@ -8,7 +8,7 @@ output: html_document
 
 
 ## Problem 1
-download the a package containing the penguins dataset:
+Downloading a package containing the penguins dataset:
 ```{r}
 # install.packages("palmerpenguins")
 data("penguins", package = "palmerpenguins")

@@ -359,7 +359,7 @@ display: none;
 
 <div id="problem-1" class="section level2">
 <h2>Problem 1</h2>
-<p>download the a package containing the penguins dataset:</p>
+<p>Downloading a package containing the penguins dataset:</p>
 <pre class="r"><code># install.packages(&quot;palmerpenguins&quot;)
 data(&quot;penguins&quot;, package = &quot;palmerpenguins&quot;)
 library(tidyverse)</code></pre>
@@ -431,19 +431,19 @@ print(df)</code></pre>
 <pre><code>## # A tibble: 10 × 4
 ##    ran_samp log_vec cha_vec                fac_vec 
 ##       &lt;dbl&gt; &lt;lgl&gt;   &lt;chr&gt;                  &lt;fct&gt;   
-##  1   1.74   TRUE    Calidris_canutus       rare    
-##  2  -0.584  FALSE   Calidris_pusilla       common  
-##  3  -0.735  FALSE   Calidris_himantopus    uncommon
-##  4  -0.0469 FALSE   Calidris_subruficollis rare    
-##  5  -1.67   FALSE   Calidris_alba          common  
-##  6   1.36   TRUE    Calidris alpina        uncommon
-##  7   0.0444 TRUE    Calidris_maritima      rare    
-##  8   1.26   TRUE    Calidris_bairdii       rare    
-##  9   0.601  TRUE    Calidris_fuscicollis   rare    
-## 10  -0.224  FALSE   Calidris minutilla     common</code></pre>
+##  1  -0.0513 FALSE   Calidris_canutus       rare    
+##  2   0.109  TRUE    Calidris_pusilla       common  
+##  3   1.39   TRUE    Calidris_himantopus    uncommon
+##  4  -0.249  FALSE   Calidris_subruficollis rare    
+##  5   1.03   TRUE    Calidris_alba          common  
+##  6  -0.178  FALSE   Calidris alpina        uncommon
+##  7   1.32   TRUE    Calidris_maritima      rare    
+##  8   0.678  TRUE    Calidris_bairdii       rare    
+##  9  -0.533  FALSE   Calidris_fuscicollis   rare    
+## 10  -2.18   FALSE   Calidris minutilla     common</code></pre>
 <p>Taking the mean of each variable in your dataframe.</p>
 <pre class="r"><code>mean(df$ran_samp)</code></pre>
-<pre><code>## [1] 0.1748891</code></pre>
+<pre><code>## [1] 0.1340465</code></pre>
 <pre class="r"><code>mean(df$log_vec)</code></pre>
 <pre><code>## [1] 0.5</code></pre>
 <pre class="r"><code>mean(df$cha_vec)</code></pre>
