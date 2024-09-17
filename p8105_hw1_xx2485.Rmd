@@ -86,10 +86,10 @@ print(df)
 
 Taking the mean of each variable in the dataframe:
 ```{r}
-mean(df$ran_samp)
-mean(df$log_vec)
-mean(df$cha_vec)
-mean(df$fac_vec)
+mean(pull(df, ran_samp))
+mean(pull(df, log_vec))
+mean(pull(df, cha_vec))
+mean(pull(df, fac_vec))
 ```
 We can take the mean for the random sample of size 10 from a standard Normal distribution and the logical vector indicating whether elements of the sample are greater than 0, but we can't take the mean for the character vector of length 10 or the factor vector of length 10.
 
